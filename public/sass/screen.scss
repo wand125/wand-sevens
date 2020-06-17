@@ -1,0 +1,177 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+.btn-push {
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  background-color: #ffa300;
+  font-size: 16px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 4px;
+  border-bottom: 4px solid #d37800;
+}
+
+.btn-push:active {
+    transform: translateY(4px);
+    border-bottom: none;
+}
+
+.disable {
+  opacity: 0.5;
+}
+
+.is-board-card {
+  background-color: green;
+}
+.is-own-card {
+  background-color: blue;
+}
+.is-opponent-card {
+  background-color: red;
+}
+.all-card img{
+  opacity: 0.6;
+}
+
+#board {
+  position: absolute;
+  top: 0vw;
+  left: 3.5vw;
+  width: 91vw;
+  height: calc(200/136*4*7vw);
+  background-color: green;
+}
+
+#own-hand {
+  position: absolute;
+  left: 3.5vw;
+  top: calc(200/136*4*7vw + 2vw);
+  height: calc(200/136*2*7vw);
+  width: 91vw;
+  background-color: blue;
+}
+#message-box {
+  position: absolute;
+  left: 3.5vw;
+  top: calc(200/136*6*7vw + 3vw);
+  height: 6vw;
+  width: 45vw;
+  background-color: red;
+  p {
+    padding: 0.2em;
+    text-align: center
+  }
+}
+#control-box-1 {
+  position: absolute;
+  left: 51vw;
+  top: calc(200/136*6*7vw + 3vw);
+  height: 5vw;
+  width: 43.5vw;
+  background-color: yellow;
+  text-align: center;
+}
+
+#all-cards {
+  position: absolute;
+  left: 3.5vw;
+  top: calc(200/136*6*7vw + 10vw);
+  height: calc(200/136*2*7vw);
+  width: 45.5vw;
+  background-color: white;
+}
+
+#opponent-hand {
+  position: absolute;
+  left: 49vw;
+  top: calc(200/136*6*7vw + 10vw);
+  width: 45.5vw;
+  height: calc(200/136*7vw);
+  background-color: lightblue;
+}
+
+#control-box-2 {
+  position: absolute;
+  left: 51vw;
+  top: calc(200/136*7*7vw + 11vw);
+  width: 41.5vw;
+  height: 5vw;
+  background-color: lightgreen;
+  text-align: center;
+}
+
+@for $j from 0 to 4 {
+  @for $i from 0 to 13 {
+    .board-card-#{$j}-#{$i} {
+      position: absolute;
+      top: calc(200/136*#{$j}*7vw);
+      left: calc(7vw * #{$i} + 3.5vw);
+      width: calc(7vw - 0.2vw);
+      height: calc(200/136*7vw - 0.2vw);
+      border: solid 0.1vw #f00;
+      img {
+        width: calc(7vw - 0.2vw);
+        height: calc(200/136*7vw - 0.2vw);
+      }
+    }
+  }
+}
+
+@for $j from 0 to 2 {
+  @for $i from 0 to 13 {
+    .own-card-#{$j}-#{$i} {
+      position: absolute;
+      top: calc(200/136*(4 + #{$j})*7vw + 2vw);
+      left: calc(7vw * #{$i} + 3.5vw);
+      width: calc(7vw - 0.2vw);
+      height: calc(200/136*7vw - 0.2vw);
+      border: solid 0.1vw #f00;
+      img {
+        width: calc(7vw - 0.2vw);
+        height: calc(200/136*7vw - 0.2vw);
+      }
+    }
+  }
+}
+
+@for $j from 0 to 4 {
+  @for $i from 0 to 13 {
+    .all-card-#{$j}-#{$i} {
+      position: absolute;
+      top: calc(200/136*(6 + #{$j}/2)*7vw + 10vw);
+      left: calc(3.5vw * #{$i} + 3.5vw);
+      width: calc(3.5vw - 0.2vw);
+      height: calc(200/136*3.5vw - 0.2vw);
+      border: solid 0.1vw #f00;
+      img {
+        width: calc(3.5vw - 0.2vw);
+        height: calc(200/136*3.5vw - 0.2vw);
+      }
+    }
+  }
+}
+
+@for $j from 0 to 4 {
+  @for $i from 0 to 13 {
+    .opponent-card-#{$j}-#{$i} {
+      position: absolute;
+      top: calc(200/136*(6 + #{$j}/2)*7vw + 10vw);
+      left: calc(3.5vw * #{$i} + 49vw);
+      width: calc(3.5vw - 0.2vw);
+      height: calc(200/136*3.5vw - 0.2vw);
+      border: solid 0.1vw #f00;
+      img {
+        width: calc(3.5vw - 0.2vw);
+        height: calc(200/136*3.5vw - 0.2vw);
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8">
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script defer src="/__/firebase/7.15.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/7.15.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.15.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="js/game.js?ver=1"></script>
+    <script src="js/resource.js?ver=1"></script>
+    <script src="js/actuator.js?ver=1"></script>
+    <script src="js/controller.js?ver=1"></script>
+    <script src="js/timer.js?ver=1"></script>
+    <title>Game</title>  
+  </head>
+  <body>
+    <div id='board'>
+    </div>
+    <div id='own-hand'>
+    </div>
+    <div id='message-box'>
+      <p id='state-message'>ゲーム準備中です</p>
+      <p id='time-message'>残り時間はn秒です</p>
+    </div>
+    <div id='control-box-1'><a href="#" class="btn-push" id='button-next' onClick='onNext();'>TURN END</a></div>
+    <div id='all-cards'>
+    </div>
+    <div id='opponent-hand'>
+    </div>
+    <div id='control-box-2'><a href="#" class="btn-push" id='button-reset' onClick='onReset();'>RESET</a></div>
+    <div id='all-card-container'></div>
+    <div id='board-container'></div>
+    <div id='own-card-container'></div>
+    <div id='opponent-card-container'></div>
+  </body>
+</html> 
